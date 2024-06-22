@@ -1,4 +1,4 @@
-import React, { Component, useState } from "react";
+import React, { useState } from "react";
 import { StyleSheet, Text, View, Image, TextInput} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import useAuth from "../hooks/useAuth";
