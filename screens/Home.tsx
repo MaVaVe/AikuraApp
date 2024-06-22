@@ -1,10 +1,30 @@
-import React, {useState} from "react";
-import { StyleSheet, Text, View } from "react-native";
+import React, {useEffect, useState} from "react";
+import { Button, StyleSheet, View } from "react-native";
+import useAuth from "../hooks/useAuth";
+import demoService from "../services/demoService";
 
 function Home(){
-    return(
+    const [data, setData] = useState({});
+
+    const { authData, login, logout } = useAuth();
+
+
+    useEffect(() => {
+        (async () => {
+            const data = await demoService();
+            setData(data);
+        })
+
+    }, []);
+
+    useEffect(() => {
+        console.log(data);
+
+    }, [data]);
+
+    return (
         <View>
-            <Text>Hola desde Home</Text>
+            <Button title="LogOut" onPress={login}></Button>
         </View>
     )
 }
