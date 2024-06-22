@@ -3,7 +3,6 @@ import { StyleSheet, Text, View, Image, TextInput} from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import useAuth from "../hooks/useAuth";
 
-
 function Login() {
 
     const [username, setUsername] = useState('');
