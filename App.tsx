@@ -1,12 +1,34 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
+import 'react-native-gesture-handler';
+
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Login from './screens/Login';
+import Home from './screens/Home';
 
 export default function App() {
+
+  const Stack = createStackNavigator();
+
+  function MyStack() {
+    return (
+      <Stack.Navigator>
+        <Stack.Screen name="Login" component={Login}
+        options={{
+          title:'',
+          headerStyle:{ backgroundColor:'#043C6C'}
+        }
+        } />
+        <Stack.Screen name="Home" component={Home} />
+      </Stack.Navigator>
+    );
+  }
+  
   return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <NavigationContainer>
+      <MyStack/>
+    </NavigationContainer>
   );
 }
 
