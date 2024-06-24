@@ -133,6 +133,7 @@ const styles = StyleSheet.create({
     text2: {
         color: 'white',
         marginTop: 15,
+        fontWeight: 'bold'
     },
     button: {
         backgroundColor: '#FBCB04',
